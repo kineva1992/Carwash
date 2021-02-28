@@ -6,6 +6,10 @@
       "destination": "wwwroot/bootstrap",
       "library": "bootstrap@4.3.0",
       "provider": "unpkg"
+    },
+    {
+      "destination": "wwwroot/jquery",
+      "library": "jquery@3.5.1"
     }
 
   ]

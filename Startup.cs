@@ -29,7 +29,7 @@ namespace Carwash
 
             //Добавление строки подключения
             services.AddDbContext<ProductDbContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString));
+            options.UseSqlServer(Configuration.GetConnectionString("CarwashConnectingString")));
 
         }
 

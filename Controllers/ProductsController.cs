@@ -86,7 +86,7 @@ namespace Carwash.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ProductID,ProductName,Discriptio,Price")] Product product)
+        public async Task<IActionResult> Edit(int id, [Bind("ProductID,ProductName,Discriptio,Price,EditDate")] Product product)
         {
             if (id != product.ProductID)
             {
@@ -97,6 +97,7 @@ namespace Carwash.Controllers
             {
                 try
                 {
+                    product.EditDate = DateTime.Now;
                     _context.Update(product);
                     await _context.SaveChangesAsync();
                 }

@@ -9,13 +9,28 @@ namespace Carwash.Models
     public class Product
     {
         public int ProductID { get; set; }
+
+        //Название услуги
+        [StringLength(60, MinimumLength = 3)]
+        [Required(ErrorMessage ="Введите название услуги")]
         public string ProductName { get; set; }
+
+        //Описание услуги
         public string Discriptio { get; set; }
 
+        //Дата создание
         [DataType(DataType.Date)]
-        public DateTime ReleaseDate { get; set; }
-        public string ClassAuto { get; set; }
-        public decimal Price{ get; set; }
+        public DateTime? ReleaseDate { get; set; }
+
+        //Дата изменения
+        [DataType(DataType.Date)]
+        public DateTime? EditDate { get; set; }
+
+        //Цена услуги
+        [DataType(DataType.Currency)]
+        public decimal? Price{ get; set; }
+
+        public ICollection<ClassAuto> ClassAutos { get; set; }
 
 
     }

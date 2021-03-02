@@ -23,7 +23,7 @@ namespace Carwash.Models
                 "активной пеной; обработка кузова жидким воском; без сушки; без протирки",
                 Price = 330,
                 ReleaseDate = DateTime.Now,
-                ClassAuto = "A"
+                
                 },
                  new Product
                  {
@@ -32,7 +32,7 @@ namespace Carwash.Models
                      "пеной; обработка кузова жидким воском; сушка кузова",
                      Price = 540,
                      ReleaseDate = DateTime.Now,
-                     ClassAuto = "A"
+                    
                  },
                   new Product
                   {
@@ -41,7 +41,7 @@ namespace Carwash.Models
                       "пылесос, протирка стекол со спец.средством, полировка пластика со спец.средством",
                       Price = 1080,
                       ReleaseDate = DateTime.Now,
-                      ClassAuto = "A"
+                      
                   },
                    new Product
                    {
@@ -50,7 +50,7 @@ namespace Carwash.Models
                        "обработка кузова жидким воском; сушка кузова",
                        Price = 900,
                        ReleaseDate = DateTime.Now,
-                       ClassAuto = "A"
+                       
                    },
                    new Product
                    {
@@ -59,9 +59,30 @@ namespace Carwash.Models
                        "пылесос, протирка стеком спец, средством, полировка пластика со спец. средстаом",
                        Price = 1520,
                        ReleaseDate = DateTime.Now,
-                       ClassAuto = "A"
+                       
                    }
+
+                   
                 );
+
+                contex.ClassAutos.AddRange(
+                    new ClassAuto { 
+                    NameAuto="lada",
+                    ClassAutos="B",
+                    ProductID = 1
+                    },
+                    new ClassAuto { 
+                    NameAuto = "Audi",
+                    ClassAutos = "C",
+                    ProductID = 1
+                    },
+                    new ClassAuto{ 
+                    NameAuto = "Mercedes",
+                    ClassAutos = "A",
+                    ProductID = 1
+                    }
+                    
+                    );
                 contex.SaveChanges();
             }
         }

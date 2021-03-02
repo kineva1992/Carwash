@@ -11,6 +11,8 @@ namespace Carwash.Models
         public int ClassAutoID { get; set; }
         public string NameAuto { get; set; }
         public string ClassAutos { get; set; }
-        public Product ProductID { get; set; }
+        public int ProductID { get; set; }
+
+        public virtual Product Product { get; set; }
     }
 }

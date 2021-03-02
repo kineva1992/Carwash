@@ -44,13 +44,17 @@ namespace Carwash
 
             else app.UseExceptionHandler("/Home/Error");
             app.UseStaticFiles();
+            app.UseRouting();
+            app.UseAuthentication();
+
             //Настройка маршрутизаци
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                pattern: "{controller=}/{action=}/{id?}");
+                    pattern: "{controller=Products}/{action=Index}/{id?}");
             });
+
         }
     }
 }

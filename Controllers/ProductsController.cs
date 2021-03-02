@@ -53,10 +53,11 @@ namespace Carwash.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ProductID,ProductName,Discriptio,Price")] Product product)
+        public async Task<IActionResult> Create([Bind("ProductID,ProductName,Discriptio,Price,ReleaseDate")] Product product)
         {
             if (ModelState.IsValid)
             {
+                product.ReleaseDate = DateTime.Today;
                 _context.Add(product);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

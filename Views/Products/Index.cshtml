@@ -24,6 +24,18 @@
             <th>
                 @Html.DisplayNameFor(model => model.ReleaseDate)
             </th>
+            @*начало*@
+            <th>
+                <table>
+                    <tr>
+                        <th>Класс автомобиля</th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Price)
+                        </th>
+                    </tr>
+                </table>
+            </th>
+            @*конец*@
             <th>
                 @Html.DisplayNameFor(model => model.EditDate)
             </th>
@@ -45,8 +57,16 @@
             <td>
                 @Html.DisplayFor(modelItelm => item.ReleaseDate)
             </td>
+            @*начало*@
+        <td>
+                @Html.DisplayFor(modelItelm => item.ClassAutos)
+        </td>
+            @*конец*@
             <td>
                 @Html.DisplayFor(modelItelm => item.EditDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClassAutos)
             </td>
             <td>
                 <a asp-controller="Products" asp-action="Edit" asp-route-id="@item.ProductID">Edit</a> |

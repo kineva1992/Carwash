@@ -26,11 +26,11 @@ namespace Carwash.Models
         [DataType(DataType.Date)]
         public DateTime? EditDate { get; set; }
 
-        //Цена услуги
+        //Цена услуги необходимо добавить в таблицу ClassCars и сделать связь Product-one-Many-ClassCars
         [DataType(DataType.Currency)]
         public decimal? Price{ get; set; }
 
-        public ICollection<ClassAuto> ClassAutos { get; set; }
+        public IEnumerable<ClassAuto> ClassAutos { get; set; }
 
 
     }

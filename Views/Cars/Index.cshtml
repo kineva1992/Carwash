@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Carwash.Models.ClassAuto>
+
+@{ 
+    ViewData["Title"] = "Index";
+
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-controller="Cars" asp-action="Create">Добавить новую машину</a>
+</p>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <td scope="col">
+                @Html.DisplayNameFor(mondel => mondel.ClassAutoID)
+            </td>
+            <td scope="col">
+                @Html.DisplayNameFor(mondel => mondel.NameAuto)
+            </td>
+            <td scope="col">
+                @Html.DisplayNameFor(mondel => mondel.ClassAutos)
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) { 
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClassAutoID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NameAuto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClassAutos)
+            </td>
+            <td>
+                <a asp-controller="Cars" asp-action="Edit" asp-route-id="@item.ClassAutoID">Edit</a> |
+                <a asp-controller="Cars" asp-action="Details" asp-route-id="@item.ClassAutoID">Details</a> |
+                <a asp-controller="Cars" asp-action="Delete" asp-route-id="@item.ClassAutoID">Delete</a>
+            </td>
+        </tr>
+
+            }
+</tbody>
+</table>

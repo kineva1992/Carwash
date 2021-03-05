@@ -1,0 +1,38 @@
+﻿@model Carwash.Models.ClassAuto
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Заполните все поля</h1>
+
+<div class="row">
+    <div class="col-md-1">
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NameAuto" class="control-label"></label>
+                <input asp-for="NameAuto" class="form-control" />
+                <span asp-validation-for="NameAuto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClassAutos" class="control-label"></label>
+                <input asp-for="ClassAutos" class="form-control" />
+                <span asp-validation-for="ClassAutos" class="text-danger"></span>
+            </div>
+            <div class="editor">
+                @*<div>@Html.LabelFor(model => model.ProductID) </div>*@
+                <label asp-for="ProductID" class="control-label"></label>
+                @Html.DropDownListFor(model => model.ProductID, ViewBag.Products as SelectList)
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
